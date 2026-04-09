@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Cravely</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2 class="logo">Cravely</h2>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li class="active">Cart</li>
+    </ul>
+</header>
+
+
+<section class="cart">
+
+    <h1 class="cart-title">Your Cart 🛒</h1>
+
+    <div class="cart-container">
+
+       
+        <div id="cart-items" class="cart-items"></div>
+
+      
+        <div class="cart-summary">
+            <h2>Total</h2>
+            <p id="total"></p>
+
+            <a href="/checkout" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let list = document.getElementById("cart-items");
+let total = 0;
+
+if (cart.length === 0) {
+    list.innerHTML = "<p>Your cart is empty 😢</p>";
+}
+
+cart.forEach(item => {
+    let div = document.createElement("div");
+    div.classList.add("cart-card");
+
+    div.innerHTML = `
+        <h3>${item.name}</h3>
+        <p>₹${item.price}</p>
+    `;
+
+    list.appendChild(div);
+    total += item.price;
+});
+
+document.getElementById("total").textContent = "₹" + total;
+
+
+function updateCart() {
+    list.innerHTML = "";
+    total = 0;
+
+    cart.forEach((item, index) => {
+        let div = document.createElement("div");
+        div.classList.add("cart-card");
+
+        div.innerHTML = `
+            <h3>${item.name}</h3>
+            <div class="quantity">
+                <button onclick="decrease(${index})">-</button>
+                <span>${item.quantity}</span>
+                <button onclick="increase(${index})">+</button>
+            </div>
+            <p>₹${item.price * item.quantity}</p>
+        `;
+
+        list.appendChild(div);
+        total += item.price * item.quantity;
+    });
+
+    document.getElementById("total").textContent = "₹" + total;
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+
+function increase(index) {
+    cart[index].quantity += 1;
+    updateCart();
+}
+
+
+function decrease(index) {
+    cart[index].quantity -= 1;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1); 
+    }
+
+    updateCart();
+}
+
+updateCart();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cravely</title>
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <h2 class="logo">Cravely</h2>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/menu">Menu</a></li>
+        <li class="active">Checkout</li>
+    </ul>
+</header>
+
+
+<section class="checkout">
+
+    <div class="checkout-box">
+
+        <h1>Order Confirmed 🎉</h1>
+
+        <p class="success-msg">
+            Your delicious food is on the way! 🚚  
+            Sit back and relax while we deliver happiness to your doorstep.
+        </p>
+
+     
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="summary-list"></ul>
+            <p class="total" id="total"></p>
+        </div>
+
+       
+        <button class="finish-btn" onclick="finishOrder()">Finish</button>
+
+    </div>
+
+</section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let list = document.getElementById("summary-list");
+let total = 0;
+
+cart.forEach(item => {
+    let li = document.createElement("li");
+    li.textContent = `${item.name} x${item.quantity} - ₹${item.price * item.quantity}`;
+    list.appendChild(li);
+    total += item.price * item.quantity;
+});
+
+document.getElementById("total").textContent = "Total: ₹" + total;
+
+function finishOrder() {
+    localStorage.removeItem("cart");
+    window.location.href = "/";
+}
+</script>
+
+</body>
+</html>

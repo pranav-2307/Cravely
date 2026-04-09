@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Cravely</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<header class="navbar">
+    <h2 class="logo">Cravely</h2>
+
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li class="active">Menu</li>
+        <li><a href="/about">About</a></li>
+    </ul>
+
+    <div class="nav-icons">
+        🛒 <a href="/cart">Cart</a>
+    </div>
+</header>
+
+
+<section class="menu">
+
+    <h1 class="menu-title">Explore Our Menu 🍽️</h1>
+
+    <div class="menu-container">
+
+    
+        <div class="food-card">
+            <img src="images/Burger new.png" alt="Burger">
+            <h2>Burger 🍔</h2>
+            <p class="price">₹120</p>
+            <button onclick="addToCart('Burger', 120)">Add to Cart</button>
+        </div>
+
+        
+        <div class="food-card">
+            <img src="images/pizza-new.png" alt="Pizza">
+            <h2>Pizza 🍕</h2>
+            <p class="price">₹250</p>
+            <button onclick="addToCart('Pizza', 250)">Add to Cart</button>
+        </div>
+
+    
+        <div class="food-card">
+            <img src="images/taco.jpg" alt="Taco">
+            <h2>Taco 🌮</h2>
+            <p class="price">₹180</p>
+            <button onclick="addToCart('Taco', 180)">Add to Cart</button>
+        </div>
+
+    
+        <div class="food-card">
+            <img src="images/noodles.jpg" alt="Noodles">
+            <h2>Noodles 🍜</h2>
+            <p class="price">₹150</p>
+            <button onclick="addToCart('Noodles', 150)">Add to Cart</button>
+        </div>
+
+    </div>
+
+</section>
+
+<div id="toast" class="toast">Item added to cart 🛒</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fffaf5;
+    color: #333;
+}
+
+/* 🔝 NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+    color: #ff4d4d;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links .active {
+    color: #ff4d4d;
+}
+
+.nav-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* 🏠 HERO */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+}
+
+/* LEFT */
+.hero-left {
+    max-width: 450px;
+}
+
+.tag {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.hero-left h1 {
+    font-size: 55px;
+    line-height: 1.2;
+}
+
+.hero-left span {
+    color: #ff4d4d;
+}
+
+.description {
+    margin: 20px 0;
+    color: #666;
+}
+
+/* BUTTONS */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: #ff4d4d;
+    color: white;
+}
+
+.primary:hover {
+    background: #e63e3e;
+}
+
+.secondary {
+    border: 1px solid #ff4d4d;
+    color: #ff4d4d;
+}
+
+.secondary:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* IMAGE */
+.hero-center img {
+    width: 400px;
+    transition: 0.4s;
+}
+
+.hero-center img:hover {
+    transform: scale(1.05);
+}
+
+/* RIGHT CARDS */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateX(5px);
+}
+
+.card h3 {
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 🍽️ MENU SECTION */
+.menu {
+    padding: 60px 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.menu-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* GRID */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.food-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXT */
+.food-card h2 {
+    margin: 10px 0;
+}
+
+.price {
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+.food-card button {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.food-card button:hover {
+    background: #e63e3e;
+}
+
+
+/* 🛒 CART SECTION */
+.cart {
+    padding: 60px 80px;
+}
+
+.cart-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* LAYOUT */
+.cart-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ITEMS */
+.cart-items {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ITEM CARD */
+.cart-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* SUMMARY BOX */
+.cart-summary {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    height: fit-content;
+}
+
+.cart-summary h2 {
+    margin-bottom: 10px;
+}
+
+#total {
+    font-size: 24px;
+    color: #ff4d4d;
+    margin-bottom: 20px;
+}
+
+/* CHECKOUT BUTTON */
+.checkout-btn {
+    display: inline-block;
+    text-align: center;
+    background: #ff4d4d;
+    color: white;
+    padding: 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #e63e3e;
+}
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ff4d4d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    opacity: 0;
+    transition: 0.4s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(-10px);
+}
+
+/* QUANTITY CONTROLS */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quantity span {
+    font-weight: bold;
+}
+
+/* 💳 CHECKOUT */
+.checkout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+}
+
+/* BOX */
+.checkout-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.checkout-box h1 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+/* MESSAGE */
+.success-msg {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* SUMMARY */
+.order-summary {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.order-summary h2 {
+    margin-bottom: 10px;
+}
+
+.order-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-summary li {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.total {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff4d4d;
+}
+
+/* BUTTON */
+.finish-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.finish-btn:hover {
+    background: #e63e3e;
+}
